@@ -98,7 +98,7 @@ public class HotelActions
   _activeUser = null;
 }
 
-// ===================== LISTOR =====================
+//LISTOR
 
 public void ShowAvailableRooms()
 {
@@ -106,7 +106,7 @@ public void ShowAvailableRooms()
   Console.WriteLine("Lediga rum:");
   bool any = false;  // flagga för att se om vi hittade något
 
-  // går igenom alla rum ett efter ett, inga LINQ-tricks
+  // går igenom alla rum ett efter ett
   for (int i = 0; i < _rooms.Count; i++)
   {
     var r = _rooms[i];  // hämtar rummet vid index i
@@ -132,14 +132,14 @@ public void ShowOccupiedRooms()
     var r = _rooms[i];
     if (r.GetStatus() == RoomStatus.Occupied)
     {
-      // null-check så vi inte skriver “null” i konsolen
+      // null-check så vi inte skriver "null" i konsolen
       string guest = r.GetCurrentGuest() == null ? "Okänd" : r.GetCurrentGuest();
       Console.WriteLine("  " + r.GetNumber() + "  ->  " + guest);
       any = true;
     }
   }
 
-  if (!any) Console.WriteLine("  (inga just nu)");
+  if (!any) Console.WriteLine("  (inga jsust nu)");
 }
 
 public void ShowMaintenanceRooms()
