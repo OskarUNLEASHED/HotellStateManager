@@ -1,16 +1,15 @@
-namespace App; 
+namespace App;
 
 using System;
 using System.IO;
 using System.Collections.Generic;
 
-// klass med statiska metoder = lätt att nå var som helst i koden.
-// ingen anledning att skapa objekt för att bara spara/läsa filer.
 static class SaveData
 {
-  private const string UsersFile = "users.txt";  // här sparas email,password
-  private const string RoomsFile = "rooms.txt";  // här sparas number,status,guest
-
+  // alltid läs/skriv i samma mapp som exe:et
+private static readonly string BasePath  = Directory.GetCurrentDirectory();
+private static readonly string UsersFile = Path.Combine(BasePath, "users.txt");
+private static readonly string RoomsFile = Path.Combine(BasePath, "rooms.txt");
     // USERS 
   // skriver hela listan av användare till fil
   // varför inte append? för då skulle gamla användare ligga kvar

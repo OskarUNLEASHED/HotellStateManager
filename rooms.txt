@@ -1,0 +1,4 @@
+101,Available,
+102,Occupied,Test Gäst
+103,Maintenance,
+1,Occupied,2

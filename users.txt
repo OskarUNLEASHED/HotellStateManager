@@ -1,0 +1,2 @@
+reception@hotel.local,secret
+1,2
